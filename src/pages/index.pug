@@ -1,0 +1,97 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    meta(http-equiv="X-UA-Compatible", content="ie=edge")
+    include includes/styles.pug
+    title Yebo Bicycles – A new generation of vintage bike
+  body.animate-root
+    // Header
+    header.header
+      nav(role="navigation")#main-navbar.navbar
+        .container-fluid
+          .row
+            .col
+              .navbar-inner
+                .navbar-logo
+                  a(href="/")
+                    img(src="../images/aod-logo.png", alt="AOD")
+                button.navbar-toggler(data-target="#navbar-menu")
+                  span.navbar-toggler-icon Menu Toggler
+                #navbar-menu.navbar-collapse
+                  ul.navbar-nav
+                    li.nav-item
+                      a(href="#about-us").nav-link About Us
+                    li.nav-item
+                      a(href="#work").nav-link Work
+                    li.logo-holder
+                    li.nav-item
+                      a(href="#shop").nav-link Shop
+                    li.nav-item
+                      a(href="#contacts").nav-link Contact
+
+    // Main
+    main.main
+      // About Us
+      section#about-us.section-default.section-about
+        .container
+          .row
+            .col
+              h1.animate-it(data-animate-name="fadeInUp") A new generation of vintage bike
+              p.animate-it(data-animate-name="fadeInUp", data-animate-delay="200ms") Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
+
+      // Work
+      section#work.section-light.section-work
+        include sections/work.pug
+
+      // Twitter
+      section.section-default.section-twitter
+        include sections/twitter.pug
+
+      // Shop
+      section#shop.section-dark.section-shop
+        include sections/shop.pug
+
+      // Mailing
+      section.section-light.section-mailing
+        .container-fluid
+          .row
+            .col
+              .logo
+                img(src="../images/logo.png", alt="AOD")
+              p Stay on the saddle!
+              form(action="post")
+                input(type="email", name="email" placeholder="enter your email...")
+                input(type="submit", value="Go")
+
+    // Footer
+    footer.footer
+        .container
+          .row
+            .col-lg-4
+              #contacts.footer-contacts
+                h4 AOD New York
+                address 2250 Lexington Avenue <br> New York, NY 10035 -
+                  |
+                  = " "
+                  a(href="mailto:info@domain.com") info@domain.com
+            .col-lg-4
+              .footer-icons
+                ul.social-icons
+                  li
+                    a(href="#", data-animate-duration="400ms", data-animate-delay="200ms", data-animate-repeat="true").circtle-icon.animate-it.twitter-icon
+                      i.typcn.typcn-social-twitter
+                  li
+                    a(href="#", data-animate-duration="400ms", data-animate-delay="600ms", data-animate-repeat="true").circtle-icon.animate-it.facebook-icon
+                      i.typcn.typcn-social-facebook
+                  li
+                    a(href="#", data-animate-duration="400ms", data-animate-delay="1s", data-animate-repeat="true").circtle-icon.animate-it.pinterest-icon
+                      i.typcn.typcn-social-pinterest
+            .col-lg-4
+              .footer-copyright
+                p.copyright.animate-it(data-animate-name="bounceIn", data-animate-delay="1.4s", data-animate-repeat="true") Handcrafted by
+                  a(href="http://www.yebocreative.com")
+                    img(src="../images/yebo-logo.png", alt="Yebo")
+
+    include includes/scripts.pug

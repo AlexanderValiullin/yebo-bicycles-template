@@ -1,0 +1,15 @@
+// Эффект для ссылок при наведении
+@mixin link-transition($duration: 0.5s, $delay: 0s)
+  transition-property: color, text-shadow, background-color, border-color, box-shadow
+  transition-duration: $duration
+  transition-timing-function: linear
+  transition-delay: $delay
+
+// Оформление значков социальных сетей
+@mixin social-icon-hover($brand-color, $light-color: $primary-light, $border-thickness: 2px)
+  border: $border-thickness solid $brand-color
+  color: $light-color
+  background-color: $brand-color
+  &:hover
+    color: $brand-color
+    background-color: $light-color

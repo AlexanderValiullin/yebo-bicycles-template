@@ -1,0 +1,19 @@
+//- Список твиттов
+-const tweets = [
+-  { title: "AOD New York  @aod", time: "35 min", post: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut tellus ac nulla semper rhoncus. Nullam a odio porttitor, dictum turpis vitae, pretium ante amet." },
+-  { title: "AOD New York  @aod", time: "25 min", post: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Hic, consequuntur porro quo veritatis architecto atque ut fugit necessitatibus error quibusdam fuga. Labore mollitia in pariatur?" },
+-  { title: "AOD New York  @aod", time: "10 min", post: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Est asperiores, quos libero quam reiciendis provident commodi suscipit repellat, facere, maxime voluptatem quidem excepturi nam sed!" }
+-]
+
+.container
+  .row
+    .col
+      #tweets-slider.owl-carousel.owl-theme
+        each item in tweets
+          .twitter-post
+            .icons
+              i.typcn.typcn-social-twitter
+            h3
+              a(href="#")= item.title
+              span= " / " + item.time
+            p= item.post

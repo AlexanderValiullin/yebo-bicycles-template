@@ -1,0 +1,23 @@
+input
+  outline: none
+  line-height: normal
+  padding: 10px 20px
+  &[type='text'],
+  &[type='email']
+    border: $border-size solid #d3d7d9
+    font-style: italic
+    &:focus
+      border-color: $brand-color
+    &::placeholder
+      color: rgba(#929292, 0.5)
+      opacity: 1
+  &[type='submit']
+    border-radius: 0
+    border: $border-size solid $brand-color
+    background-color: $brand-color
+    color: $primary-light
+    text-transform: uppercase
+    +link-transition($default-duration)
+    &:hover
+      background-color: $dark-background
+      color: $brand-color

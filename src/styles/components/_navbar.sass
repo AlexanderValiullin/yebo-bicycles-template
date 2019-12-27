@@ -1,0 +1,178 @@
+$icon-line-height: 1
+$icon-line-opacity: 0.85
+$button-size: 34
+
+// Панель навигации
+.navbar
+  display: flex
+  flex-wrap: nowrap
+  align-items: center
+  position: relative
+  width: 100%
+  margin: 0
+  padding: 0
+  z-index: 5
+  .navbar-inner
+    display: flex
+    align-items: center
+  .navbar-logo
+    padding: 10px 0
+    margin-right: auto
+  .navbar-nav
+    display: flex
+    flex-flow: row nowrap
+    padding: 0
+    margin: 0
+    list-style-type: none
+  .nav-item
+    display: inline-block
+  .nav-link
+    display: inline-block
+    padding: 4px 10px
+    color: $menu-color
+    font-size: 0.8125rem
+    letter-spacing: 0.2em
+    font-weight: 700
+    text-transform: uppercase
+    text-decoration: none !important
+    +link-transition($default-duration)
+    &:hover
+      color: $brand-color
+
+// Тема оформления панели для компьютера
+.navbar.navbar-desktop
+  padding: 30px 0
+  .navbar-inner
+    display: flex
+    align-items: center
+    justify-content: center
+  .navbar-logo
+    position: absolute
+    z-index: 10
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+  .navbar-collapse
+    display: flex
+  .navbar-nav
+    display: flex
+    align-items: center
+  .logo-holder
+    display: inline-block
+    margin: 0 54px
+    padding: 0 10px
+    width: 94px
+    height: 85px
+  .nav-item:nth-child(3n+1)::after
+    content: '·'
+    margin: 0 22px
+  .nav-link
+    position: relative
+    &::after
+      content: ''
+      position: absolute
+      left: 0
+      right: 0
+      bottom: 0
+      height: $border-size
+      background-color: $brand-color
+      transition: transform $default-duration
+      transform-origin: right
+      transform: scaleX(0)
+    &:hover::after
+        transform-origin: left
+        transform: scaleX(1)
+
+// Тема оформления панели для телефона/планшета
+.navbar.navbar-mobile
+  padding: 0
+  .navbar-inner
+    display: flex
+    flex-wrap: wrap
+  .navbar-logo
+    position: static
+  .navbar-collapse
+    display: flex
+    justify-content: center
+    width: 100%
+  .navbar-nav
+    display: flex
+    flex-flow: nowrap column
+    justify-content: space-around
+  .logo-holder
+    display: none
+  .nav-item
+    display: block
+    text-align: center
+    position: relative
+    &::after
+      content: ''
+      position: absolute
+      left: 0
+      right: 0
+      bottom: 0
+      height: $border-size
+      width: 50px
+      margin: 0 auto
+      background-color: $brand-color
+      box-shadow: 0 4px 8px $primary-dark
+  .nav-link
+    font-size: 1.12rem
+    text-transform: uppercase
+    letter-spacing: 0.2em
+    text-shadow: 0 0 12px $primary-light
+
+// Кнопка меню для мобильной версии
+.navbar
+  .navbar-toggler
+    display: none
+    width: #{$button-size}px
+    height: #{$button-size}px
+    cursor: pointer
+    padding: 0
+    border: 0
+    background: none
+    border-radius: 0
+    outline: none
+    font-size: 0
+    .navbar-toggler-icon
+      position: relative
+      &::before, &::after
+        content: ''
+        position: absolute
+      &, &::before, &::after
+        display: block
+        background-color: rgba($menu-color, $icon-line-opacity)
+        box-shadow: 0 0 2px rgba($primary-dark, 0.2)
+        width: #{$button-size}px
+        height: #{$icon-line-height}px
+        transition: all $default-duration ease-in-out
+      &::before
+        top: #{round(-$button-size / 3) + $icon-line-height * 2}px
+      &::after
+        top: #{round($button-size / 3) - $icon-line-height * 2}px
+    &.active
+      .navbar-toggler-icon
+        box-shadow: none
+        background-color: transparent
+        &, &::before, &::after
+          top: 0
+        &::before, &::after
+          background-color: rgba($brand-color, $icon-line-opacity)
+        &::before
+          transform: rotate(-45deg)
+        &::after
+          transform: rotate(45deg)
+
+// Анимация меню для мобильных устройств
+#navbar-main.show
+  animation-name: menu-fade-in
+  animation-duration: 0.5s
+
+@keyframes menu-fade-in
+  from
+    transform: scaleX(0.5)
+    opacity: 0
+  to
+    transform: scaleX(1)
+    opacity: 1

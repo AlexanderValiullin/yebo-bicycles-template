@@ -1,0 +1,59 @@
+$button-size: 28
+
+.section-shop
+  padding: 0
+  font-size: 0.875rem
+  font-weight: 700
+  letter-spacing: 0.2em
+  .bicycle-images
+    display: flex
+    flex-wrap: wrap
+    width: 100%
+  .image-full-block,
+  .image-half-block
+    position: relative
+    img
+      width: 100%
+      height: auto
+  .img-overlay
+    display: flex
+    justify-content: center
+    align-items: center
+    position: absolute
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    z-index: 10
+    background-color: rgba($brand-color, 0.8)
+  .btn-overlay
+    display: flex
+    justify-content: center
+    align-items: center
+    padding: 0
+    background-color: transparent
+    width: #{$button-size}px
+    height: #{$button-size}px
+    outline: none
+    border: none
+    position: absolute
+    top: #{floor($button-size / 2)}px
+    right: #{floor($button-size / 2)}px
+    i
+      color: $primary-light
+      font-size: #{$button-size}px
+      line-height: #{$button-size}px
+  .overlay-link
+    color: $primary-light
+    padding-top: 40px
+    background: url('../../images/icon05.png') center top no-repeat
+    text-transform: uppercase
+    text-decoration: none
+  .image-full-block
+    width: 100%
+  .image-half-block
+    width: 50%
+  .discover-block
+    padding: 80px 0
+    .btn-discover
+      padding: 12px 56px

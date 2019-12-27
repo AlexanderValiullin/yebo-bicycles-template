@@ -1,0 +1,18 @@
+# Модули Node.js
+node_modules/
+
+# Необработанные шрифты, изображения, иконки и т.д.
+template/**
+
+# Исключаем файл с изображением шаблона
+!template/YEBO_Bicycle_Theme.png
+!template/header-thumbnail.png
+
+# Локальные настройки для Vim и Tmux
+.local.vimrc
+.local.tmux.conf
+
+# Временные файлы
+*.tmp
+*.swp
+*~

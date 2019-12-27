@@ -1,0 +1,86 @@
+$arrow-side: 10px
+
+.section-work
+  .image-section,
+  .description-image
+    background-color: $dark-background
+    background-size: cover
+    background-position: center
+    background-repeat: no-repeat
+  .image-section
+    min-height: 600px
+    @media (max-width: $lg-screen)
+      min-height: 400px
+    height: 100%
+    display: flex
+    justify-content: center
+    align-items: center
+  .description-section
+    display: flex
+    flex-flow: column nowrap
+    h2
+      padding-top: 60px
+      margin-top: 60px
+      @media (max-width: $lg-screen)
+        margin-top: 10px
+    .headline-icon-1
+      background-image: url('../../images/icon02.png')
+    .headline-icon-2
+      background-image: url('../../images/icon03.png')
+    .headline-icon-3
+      background-image: url('../../images/icon04.png')
+    p
+      padding: 0 64px 40px
+      line-height: 1.86rem
+      text-align: justify
+      position: relative
+      @media (max-width: $lg-screen)
+        text-align: center
+      &::after
+        position: absolute
+        content: ''
+        left: 0
+        right: 0
+        bottom: 0
+        margin: 0 auto
+        height: $border-size
+        width: 50px
+        background-color: rgba(#353738, 0.2)
+    .description-text
+      position: relative
+      min-height: 400px
+      @media (max-width: $lg-screen)
+        min-height: 0
+        padding: 40px 0
+      &::after
+        position: absolute
+        z-index: 5
+        content: ''
+        left: 0
+        right: 0
+        bottom: -$arrow-side
+        margin: 0 auto
+        width: 0
+        height: 0
+        border-left: $arrow-side solid transparent
+        border-right: $arrow-side solid transparent
+        border-top: $arrow-side solid $light-background
+    .description-image
+      display: block
+      min-height: 200px
+      @media (max-width: $lg-screen)
+        display: none
+  .work-bg-image-1
+    background-image: url('../../images/image01.jpg')
+  .work-bg-image-2
+    background-image: url('../../images/image02.jpg')
+  .work-bg-image-3
+    background-image: url('../../images/image03.jpg')
+  .work-bg-image-4
+    background-image: url('../../images/image04.jpg')
+  .work-bg-image-5
+    background-image: url('../../images/image05.jpg')
+  .work-bg-image-6
+    background-image: url('../../images/image06.jpg')
+  .work-bg-image-7
+    background-image: url('../../images/image07.jpg')
